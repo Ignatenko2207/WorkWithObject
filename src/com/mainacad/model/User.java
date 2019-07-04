@@ -1,15 +1,17 @@
 package com.mainacad.model;
 
+import com.mainacad.service.UserGenerationService;
+
 import java.util.Date;
 
-public class User extends Object{
+public class User {
 
     private String login;
     private String password;
     private String firstName;
     private String lastName;
     private Date dateOfBirth;
-    private Gender gender;
+    private final Gender gender;
 
     public String getLogin() {
         return login;
@@ -55,11 +57,8 @@ public class User extends Object{
         return gender;
     }
 
-    public void setGender(Gender gender) {
+    public User(Gender gender) {
         this.gender = gender;
-    }
-
-    public User() {
     }
 
     public User(String login, String password, String firstName, String lastName, Date dateOfBirth, Gender gender) {
